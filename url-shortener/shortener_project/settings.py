@@ -27,9 +27,9 @@ DEBUG = False
 
 DEBUG = False
 ALLOWED_HOSTS = [
+    "url-shortener-f8ii.onrender.com",
     "127.0.0.1",
     "localhost",
-    "https://url-shortener-f8ii.onrender.com",
 ]  # Add your domain here
 
 
