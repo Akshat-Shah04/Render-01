@@ -26,7 +26,11 @@ SECRET_KEY = "django-insecure-ths5&vh-^6+2vi^0=%r&%64mjsx)r#yqboy$gkkt@&5sj+cn4*
 DEBUG = False
 
 DEBUG = False
-ALLOWED_HOSTS = ["127.0.0.1", "localhost", ".vercel.app"]  # Add your domain here
+ALLOWED_HOSTS = [
+    "127.0.0.1",
+    "localhost",
+    "https://url-shortener-f8ii.onrender.com",
+]  # Add your domain here
 
 
 # Application definition
