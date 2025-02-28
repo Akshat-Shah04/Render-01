@@ -28,7 +28,12 @@ SECRET_KEY = os.environ.get(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG") == "False"
 
-ALLOWED_HOSTS = ["qr-code-xwa2.onrender.com"]  # replace with your render url
+# Add your Vercel frontend URL
+ALLOWED_HOSTS = [
+    "qr-code-xwa2.onrender.com",
+    "https://qr-code-topaz-eight.vercel.app",
+    "https://qr-code-akshat-shah04s-projects.vercel.app/",
+]  # replace with your render url
 
 # Application definition
 
@@ -76,8 +81,10 @@ TEMPLATES = [
 WSGI_APPLICATION = "backend.wsgi.application"
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # development
+    # "http://localhost:3000",  # development
     "https://qr-code-xwa2.onrender.com",  # replace with your render url
+    "https://qr-code-topaz-eight.vercel.app",  # Add your Vercel frontend URL
+    "https://qr-code-akshat-shah04s-projects.vercel.app",
     # Add your vercel domain here for production.
 ]
 
