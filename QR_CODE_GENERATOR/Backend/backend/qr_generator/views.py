@@ -7,6 +7,10 @@ import qrcode
 from io import BytesIO
 import base64
 from django.shortcuts import get_object_or_404
+import logging
+
+logger = logging.getLogger(__name__)
+
 
 @api_view(["POST"])
 def generate_qr(request):
@@ -32,9 +36,13 @@ def generate_qr(request):
     QRCodeData.objects.create(unique_id=unique_id, image_data=img_base64)
 
     share_url = f"https://qr-code-xwa2.onrender.com/share/{unique_id}"
-    return JsonResponse({'image': img_base64, 'share_url': share_url})
+    return JsonResponse({"image": img_base64, "share_url": share_url})
+
 
 def share_qr(request, unique_id):
+    logger.info(f"share_qr called with unique_id: {unique_id}")
     qr_data = get_object_or_404(QRCodeData, unique_id=unique_id)
+    logger.info(f"QRCodeData found: {qr_data}")
     img_data = base64.b64decode(qr_data.image_data)
+    logger.info("Image data decoded")
     return HttpResponse(img_data, content_type="image/png")
