@@ -75,6 +75,7 @@ WSGI_APPLICATION = "backend.wsgi.application"
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # development
+    "https://qr-code-xwa2.onrender.com/",
     # Add your vercel domain here for production.
 ]
 
